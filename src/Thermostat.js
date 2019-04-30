@@ -1,8 +1,17 @@
-"use strict"
+"use strict";
 
-function Thermostat() {
-  const DefaultTemp = 20;
-}
+class Thermostat {
+  constructor() {
+    this.temp = 20;
+  }
+  getCurrentTemp() {
+    return this.temp;
+  }
+  up() {
+    this.temp += 1;
+  }
+};
+
 // Player.prototype.play = function(song) {
 //   this.currentlyPlayingSong = song;
 //   this.isPlaying = true;

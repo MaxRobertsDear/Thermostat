@@ -1,18 +1,34 @@
+"use strict";
+
 describe("Thermostat", () => {
 
+  var thermostat;
+  
   beforeEach(function() {
-    thermoStat = new Thermostat();
+    thermostat = new Thermostat();
   });
 
-  it("should start at 20 degrees", function() {
+  it("should start at 20 degrees", () => {
     //arrange
-    const defaultTemp = 20;
+    let currentTemp;
     //act
-
+    currentTemp = thermostat.getCurrentTemp();
     //assert
-    expect(defaultTemp).toBe(20);
+    expect(currentTemp).toBe(20);
+  });
+
+  it('increases in temperature with up()', () => {
+    //arrange
+    let currentTemp;
+    //act
+    thermostat.up();
+    currentTemp = thermostat.getCurrentTemp();
+    //assert
+    expect(currentTemp).toBe(21);
   });
 });
+
+
 //     player.play(song);
 //     expect(player.currentlyPlayingSong).toEqual(song);
 
