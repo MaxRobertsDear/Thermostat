@@ -26,6 +26,16 @@ describe("Thermostat", () => {
     //assert
     expect(currentTemp).toBe(21);
   });
+
+  it('decreases in temperature with down()', () => {
+    //arrange
+    let currentTemp;
+    //act 
+    thermostat.down();
+    currentTemp = thermostat.getCurrentTemp();
+    //assert
+    expect(currentTemp).toBe(19);
+  });
 });
 
 
