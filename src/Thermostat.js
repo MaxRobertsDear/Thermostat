@@ -43,6 +43,12 @@ class Thermostat {
   reset() {
     this.temp = 20;
   }
+  PSMOn() {
+    this.power_saving_mode = true;
+  }
+  PSMOff() {
+    this.power_saving_mode = false;
+  }
   energyUsage() {
     if (this.temp < 18) { 
       return "low-usage";
