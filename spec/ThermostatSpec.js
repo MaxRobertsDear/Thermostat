@@ -50,9 +50,20 @@ describe("Thermostat", () => {
     //arrange
     let maxTempPSMOn;
     //act
+    this.power_saving_mode = true;
     maxTempPSMOn = thermostat.getMaximumTempPSMOn();
     //assert
     expect(maxTempPSMOn).toBe(25);
+  });
+
+  it('has a maximum temperature of 32 degrees when power saving mode (PSM) is off', () => {
+    //arrange
+    let maxTempPSMOff;
+    //act
+    this.power_saving_mode = false;
+    maxTempPSMOff = thermostat.getMaximumTempPSMOff();
+    //assert
+    expect(maxTempPSMOff).toBe(32);
   });
 
 });

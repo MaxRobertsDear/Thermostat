@@ -6,10 +6,14 @@ class Thermostat {
     const MINIMUM_TEMP = 10;
     //PSM is shorthand for 'power saving mode'
     const MAXIMUM_TEMP_PSMON = 25;
+    const MAXIMUM_TEMP_PSMOFF = 32;
+    
 
     this.temp = DEFAULT_TEMP;
     this.minTemp = MINIMUM_TEMP;
     this.maxTempPSMOn = MAXIMUM_TEMP_PSMON;
+    this.maxTempPSMOff = MAXIMUM_TEMP_PSMOFF;
+    this.power_saving_mode = true;
   }
   getCurrentTemp() {
     return this.temp;
@@ -20,8 +24,16 @@ class Thermostat {
   getMaximumTempPSMOn() {
     return this.maxTempPSMOn;
   }
+  getMaximumTempPSMOff() {
+    return this.maxTempPSMOff;
+  }
   up() {
-    this.temp++;
+    if (power_saving_mode === true && this.temp < this.maxTempPSMOn) {
+      this.temp++;
+    } else if (power_saving_mode === false && this.temp < this.maxTempPSMOff) {
+      this.temp++;
+    } else { throw new Error('Maximum temperature reached.');
+  }
   }
   down() {
     if (this.temp > this.minTemp) {
