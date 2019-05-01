@@ -25,3 +25,8 @@ As a user who is environmentally concious
 So that I don't heat my home excessively
 I want the thermostat to have a maximum temperature of 25 degrees when power saving mode is on
 ```
+``` 
+As a user who is environmentally unaware
+So that my home is a sauna
+I want the thermostat to have a maximum temperature of 32 degrees when power saving mode is off
+```
