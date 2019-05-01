@@ -21,6 +21,7 @@ describe("Thermostat", () => {
     //arrange
     let currentTemp;
     //act
+    this.power_saving_mode = true;
     thermostat.up();
     currentTemp = thermostat.getCurrentTemp();
     //assert
@@ -65,7 +66,16 @@ describe("Thermostat", () => {
     //assert
     expect(maxTempPSMOff).toBe(32);
   });
-
+  
+  it('is in power saving mode by default', () => {
+    //arrange
+    let maxTempPSMOn;
+    //act
+    // this.power_saving_mode = true;
+    maxTempPSMOn = thermostat.getMaximumTempPSMOn();
+    //assert
+    expect(maxTempPSMOn).toBe(25);
+  });
 });
 
 
