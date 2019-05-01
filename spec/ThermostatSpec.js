@@ -21,7 +21,6 @@ describe("Thermostat", () => {
     //arrange
     let currentTemp;
     //act
-    this.power_saving_mode = true;
     thermostat.up();
     currentTemp = thermostat.getCurrentTemp();
     //assert
@@ -71,10 +70,21 @@ describe("Thermostat", () => {
     //arrange
     let maxTempPSMOn;
     //act
-    // this.power_saving_mode = true;
     maxTempPSMOn = thermostat.getMaximumTempPSMOn();
     //assert
     expect(maxTempPSMOn).toBe(25);
+  });
+
+  it('has a reset function that sets the temperature to 20 degrees', () => {
+    //arrange
+    let currentTemp;
+    //act
+    thermostat.up();
+    thermostat.reset();
+    // thermostat.reset();
+    currentTemp = thermostat.getCurrentTemp();
+    //assert
+    expect(currentTemp).toBe(20)
   });
 });
 

@@ -35,3 +35,8 @@ As a user who is environmentally concious
 So that I don't heat my home excessively
 I want the thermostat to be on power saving mode by default
 ```
+``` 
+As a user who likes convenience
+So that I can easily set the thermostat to 20 degrees
+I want the thermostat to have a reset function for 20 degrees
+```

@@ -28,9 +28,9 @@ class Thermostat {
     return this.maxTempPSMOff;
   }
   up() {
-    if (power_saving_mode === true && this.temp < this.maxTempPSMOn) {
+    if (this.power_saving_mode === true && this.temp < this.maxTempPSMOn) {
       this.temp++;
-    } else if (power_saving_mode === false && this.temp < this.maxTempPSMOff) {
+    } else if (this.power_saving_mode === false && this.temp < this.maxTempPSMOff) {
       this.temp++;
     } else { throw new Error('Maximum temperature reached.');
   }
@@ -41,7 +41,11 @@ class Thermostat {
     } else { throw new Error('Minimum temperature reached.');
     }
   }
+  reset() {
+    this.temp = 20;
+  }
 };
+
 
 // Player.prototype.play = function(song) {
 //   this.currentlyPlayingSong = song;
