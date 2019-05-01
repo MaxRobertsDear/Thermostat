@@ -36,6 +36,16 @@ describe("Thermostat", () => {
     //assert
     expect(currentTemp).toBe(19);
   });
+
+  it('has a minimum temperature of 10 degrees', () => {
+    //arrange
+    let minTemp;
+    //act
+    minTemp = thermostat.getMinimumTemp();
+    //assert
+    expect(minTemp).toBe(10);
+  });
+
 });
 
 

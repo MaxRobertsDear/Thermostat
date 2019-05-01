@@ -2,16 +2,26 @@
 
 class Thermostat {
   constructor() {
-    this.temp = 20;
+    const DEFAULT_TEMP = 20;
+    const MINIMUM_TEMP = 10;
+
+    this.temp = DEFAULT_TEMP;
+    this.minTemp = MINIMUM_TEMP;
   }
   getCurrentTemp() {
     return this.temp;
   }
+  getMinimumTemp() {
+    return this.minTemp;
+  }
   up() {
-    this.temp += 1;
+    this.temp++;
   }
   down() {
-    this.temp -= 1;
+    if (this.temp > this.minTemp) {
+      this.temp--;
+    } else { throw new Error('Minimum temperature reached.');
+    }
   }
 };
 
