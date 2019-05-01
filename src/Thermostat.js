@@ -4,15 +4,21 @@ class Thermostat {
   constructor() {
     const DEFAULT_TEMP = 20;
     const MINIMUM_TEMP = 10;
+    //PSM is shorthand for 'power saving mode'
+    const MAXIMUM_TEMP_PSMON = 25;
 
     this.temp = DEFAULT_TEMP;
     this.minTemp = MINIMUM_TEMP;
+    this.maxTempPSMOn = MAXIMUM_TEMP_PSMON;
   }
   getCurrentTemp() {
     return this.temp;
   }
   getMinimumTemp() {
     return this.minTemp;
+  }
+  getMaximumTempPSMOn() {
+    return this.maxTempPSMOn;
   }
   up() {
     this.temp++;

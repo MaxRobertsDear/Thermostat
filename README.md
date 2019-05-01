@@ -20,3 +20,8 @@ As a user who is sensitive to temperature
 So that I don't freeze my nipples off
 I want the thermostat to have a minimum temperature of 10 degrees
 ```
+``` 
+As a user who is environmentally concious
+So that I don't heat my home excessively
+I want the thermostat to have a maximum temperature of 25 degrees when power saving mode is on
+```
