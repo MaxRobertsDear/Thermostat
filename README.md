@@ -40,3 +40,8 @@ As a user who likes convenience
 So that I can easily set the thermostat to 20 degrees
 I want the thermostat to have a reset function for 20 degrees
 ```
+``` 
+As a user who is environmentally concious
+So that I can monitor how much energy I'm using
+I want the thermostat to show me that the energy usage is low-usage when below 18 degrees and medium-usage when below 25 degrees. Anything else is high usage.
+```

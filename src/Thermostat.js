@@ -32,8 +32,7 @@ class Thermostat {
       this.temp++;
     } else if (this.power_saving_mode === false && this.temp < this.maxTempPSMOff) {
       this.temp++;
-    } else { throw new Error('Maximum temperature reached.');
-  }
+    } else { throw new Error('Maximum temperature reached.');}
   }
   down() {
     if (this.temp > this.minTemp) {
@@ -44,26 +43,12 @@ class Thermostat {
   reset() {
     this.temp = 20;
   }
+  energyUsage() {
+    if (this.temp < 18) { 
+      return "low-usage";
+    } else if (this.temp < 25) {
+      return "medium-usage"
+    } else { return "high-usage";}
+  }
 };
 
-
-// Player.prototype.play = function(song) {
-//   this.currentlyPlayingSong = song;
-//   this.isPlaying = true;
-// };
-
-// Player.prototype.pause = function() {
-//   this.isPlaying = false;
-// };
-
-// Player.prototype.resume = function() {
-//   if (this.isPlaying) {
-//     throw new Error("song is already playing");
-//   }
-
-//   this.isPlaying = true;
-// };
-
-// Player.prototype.makeFavorite = function() {
-//   this.currentlyPlayingSong.persistFavoriteStatus(true);
-// };
